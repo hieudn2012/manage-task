@@ -4,13 +4,13 @@ import {
   Route,
 } from "react-router-dom";
 import Home from '../pages/home';
-import Login from '../pages/login';
+import Landing from '../pages/login';
 
 export default function RouterConFig() {
   return (
     <Switch>
       <Route exact path="/">
-        <Login />
+        <Landing />
       </Route>
       <Route path="/home">
         <Home />

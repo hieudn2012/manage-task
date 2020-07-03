@@ -1,0 +1,22 @@
+button,
+input {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+p {
+  margin: 0 !important;
+}
+
+.container-login-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-small {
+  font-size: 12px !important;
+}
