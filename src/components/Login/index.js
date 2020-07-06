@@ -66,18 +66,6 @@ export default function Login() {
         <p>Forgot Password</p>
       </div>
       <button type="submit" className="btn btn-primary btn-block mb-4 shadow">Login</button>
-      <p className="text-center h5">Login with</p>
-      <div className="row my-3">
-        <div className="col px-1">
-          <button className="btn btn-primary btn-block text-small text-center p-0 py-2 m-0 font-weight-bold" type="button">Facebook</button>
-        </div>
-        <div className="col px-1">
-          <button className="btn btn-success btn-block text-small text-center p-0 py-2 m-0 font-weight-bold" type="button">Twitter</button>
-        </div>
-        <div className="col px-1">
-          <button className="btn btn-danger btn-block text-small text-center p-0 py-2 m-0 font-weight-bold" type="button">Google</button>
-        </div>
-      </div>
       <p className="h6 text-center">Don't have an account? Register here</p>
     </form>
   )
