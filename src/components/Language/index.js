@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { saveLangCache, getLangCache } from '../../cache/language'
+import { img } from '../../images';
 
 function Language() {
 
+  const [lang, setLang] = useState(getLangCache());
   const { i18n } = useTranslation();
-  const lang = getLangCache();
 
-  function onChangeLang(value) {
-    i18n.changeLanguage(value);
-    saveLangCache(value);
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+    saveLangCache(lang);
+  }, [lang, i18n]);
+
+  function onChangeLang() {
+    setLang(lang === 'vi' ? 'en' : 'vi');
   }
 
   return (
-    <div className="position-absolute" style={{ top: 10, left: 20 }}>
-      <select onChange={(e) => onChangeLang(e.target.value)} defaultValue={lang}>
-        <option value="en">EN</option>
-        <option value="vi">VI</option>
-      </select>
+    <div className="d-flex align-items-center">
+      <img
+        src={lang === 'en' ? img.flagEng : img.flagVi}
+        style={{ width: 30, height: 20 }}
+        alt="language"
+        onClick={onChangeLang}
+        className="pointer"
+      />
     </div>
   )
 }

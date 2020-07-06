@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import TudoList from '../../components/TudosList';
-import Clock from '../../components/TimeClock';
-import Language from '../../components/Language';
+import TudoList from '../../components/TodosList';
 import todoApi from '../../api/todo';
+import Nav from '../../components/Nav';
 
 function Home() {
   const [dataTask, setDataTask] = useState([]);
 
   useEffect(() => {
-    const fetchProductList = async () => {
+    const getTodoList = async () => {
       try {
         const response = await todoApi.getAll();
         setDataTask(response);
       } catch (error) {
-        console.log('Failed to fetch product list: ', error);
+        console.log('Failed to fetch todo list: ', error);
       }
     }
 
-    fetchProductList();
+    getTodoList();
   }, []);
 
   function onDelete(id) {
@@ -37,9 +36,8 @@ function Home() {
   }
 
   return (
-    <div className="container">
-      <Clock />
-      <Language />
+    <div>
+      <Nav />
       <div className="row d-flex justify-content-center mt-5">
         <div className="col-md-10">
           <TudoList

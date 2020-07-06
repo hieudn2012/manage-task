@@ -22,8 +22,8 @@ function Clock() {
 
 
   return (
-    <div className="position-absolute" style={{top: 10, right: 20}}>
-      <p className="text-primary h5">
+    <div>
+      <p className="text-white h5" style={{width: 100}}>
         {timeClock}
       </p>
     </div>

@@ -8,18 +8,18 @@ import { setTastEdit } from '../../redux/actions/todo';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-TudoList.propTypes = {
+TodoList.propTypes = {
   data: PropTypes.array.isRequired,
   onDelete: PropTypes.func,
 }
 
-TudoList.defaultProps = {
+TodoList.defaultProps = {
   data: [],
   onDelete: null,
   onAddNew: null,
 }
 
-function TudoList({ data, onDelete, onAddNew }) {
+function TodoList({ data, onDelete, onAddNew }) {
 
   // const taskStore = useSelector(state => state.taskReducer.task);
   const dispatch = useDispatch();
@@ -106,7 +106,7 @@ function TudoList({ data, onDelete, onAddNew }) {
   }
 
   return (
-    <div>
+    <div className="container-fluid">
       {isAddNew && renderAddNew()}
       <h2>{t('Welcome to React')}</h2>
       <button
@@ -141,4 +141,4 @@ function TudoList({ data, onDelete, onAddNew }) {
   )
 }
 
-export default TudoList;
+export default TodoList;

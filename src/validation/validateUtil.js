@@ -1,12 +1,12 @@
-const { EMPTY } = require("./message");
+import i18n from "../i18n";
 
 function checkEmail(email) {
-  if (!email) return EMPTY;
+  if (!email) return i18n.t('empty');
   return '';
 }
 
 function checkPassword(password) {
-  if (!password) return EMPTY;
+  if (!password) return i18n.t('empty');
   return '';
 }
 

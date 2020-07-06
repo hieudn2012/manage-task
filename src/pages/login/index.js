@@ -6,7 +6,9 @@ export default function Landing() {
   return (
     <div className="container-login-page">
       <div className="row justify-content-center w-100">
-        <div className="col col-sm-12 col-md-6">
+        <div className="col-lg-8 col-md-0">
+        </div>
+        <div className="col-lg-4 col-md-8">
           <Login />
         </div>
       </div>
