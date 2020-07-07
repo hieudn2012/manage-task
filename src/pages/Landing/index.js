@@ -1,22 +1,26 @@
 import React from 'react';
 import Login from '../../components/Login';
+import NavLanding from '../../components/NavLanding';
 
 export default function Landing() {
 
   return (
     <div>
       <header>
-        <section></section>
+        <section>
+          <NavLanding /> 
+        </section>
       </header>
       <main>
         <section className="ctn-landing">
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-6">
-                <div className="text-white py-5">
+                <div className="text-white py-5 left">
                   <h4>Ura landing page template</h4>
-                  <p className="py-3">A versatile and easy solution for your all kinds of software and business landing page needs.</p>
-                  <button className="btn btn-danger">KNOW MORE</button>
+                  <p className="mt-3">A versatile and easy solution for your all kinds of</p>
+                  <p className="mb-3">software and business landing page needs.</p>
+                  <button className="btn bg-white text-primary">KNOW MORE</button>
                 </div>
               </div>
               <div className="col-md-6">

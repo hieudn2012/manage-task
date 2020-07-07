@@ -1,10 +1,12 @@
+@import './variable.scss';
+
 .ctn-landing {
   min-width: 100vw;
-  padding: 150px 0 50px 0;
+  padding: 300px 0 40px 0;
 
   position: relative;
 
-  background-color: #047aed;
+  background-color: $main-dark;
 
   &::before {
     content: ' ';
@@ -13,13 +15,14 @@
     bottom: -60px;
     left: 0;
     right: 0;
-    background: #FFFFFF;
+    background: $white;
     transform: skewY(-4deg);
     -webkit-transform: skewY(-4deg);
   }
-}
 
-.form-login {
-  max-width: 400px;
-  margin: auto;
+  .left, .form-login {
+    max-width: 400px;
+    margin: auto;
+
+  }
 }

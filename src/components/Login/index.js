@@ -65,7 +65,7 @@ export default function Login() {
           </div>
           <p>Forgot Password</p>
         </div>
-        <button type="submit" className="btn btn-primary btn-block mb-4 shadow">Login</button>
+        <button type="submit" className="btn btn-dark btn-block mb-4 shadow">Login</button>
         <p className="h6 text-center">Don't have an account? Register here</p>
       </form>
     </div>
