@@ -17,7 +17,7 @@ export default function NavLanding() {
   }, [goingUp]);
 
   return (
-    <div className={`nav-landing ${goingUp && 'bg-secondary'}`}>
+    <div className={`nav-landing ${goingUp && 'bg-nav-dark'}`}>
       <h4>Uram.</h4>
       <ul>
         <li>

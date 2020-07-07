@@ -7,7 +7,7 @@ import { img } from '../../images';
 export default function Nav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-nav-dark">
         <img
           src={img.logo}
           style={{ width: 20, height: 20 }}
@@ -16,7 +16,7 @@ export default function Nav() {
         />
         <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul className="navbar-nav">
-            <Link to="/">Login</Link>
+            <Link to="/" className="text-white text-decoration-none">Login</Link>
           </ul>
           <div className="row px-2">
             <Language />

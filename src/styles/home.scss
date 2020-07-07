@@ -1,0 +1,13 @@
+@import './variable.scss';
+
+.ctn-home {
+  min-height: 150vh;
+  min-width: 100vw;
+  background-color: $main-dark;
+  padding: 50px 0 50px 0;
+  color: $white;
+
+  .wrap-panel-high {
+    height: 500px;
+  }
+}

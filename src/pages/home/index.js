@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import TudoList from '../../components/TodosList';
+// import TudoList from '../../components/TodosList';
 import todoApi from '../../api/todo';
 import Nav from '../../components/Nav';
-// import NavLanding from '../../components/NavLanding';
+import NavLanding from '../../components/NavLanding';
+import PanelTask from '../../components/PanelTask';
+import PanelCheckin from '../../components/PanelTask';
+import TopData from '../../components/TopData';
 
 function Home() {
   const [dataTask, setDataTask] = useState([]);
@@ -20,34 +23,53 @@ function Home() {
     getTodoList();
   }, []);
 
-  function onDelete(id) {
-    const taskIndex = dataTask.findIndex((item) => {
-      return item.id === id
-    });
-    const newData = [...dataTask];
-    newData.splice(taskIndex, 1);
-    setDataTask(newData);
-  }
+  // function onDelete(id) {
+  //   const taskIndex = dataTask.findIndex((item) => {
+  //     return item.id === id
+  //   });
+  //   const newData = [...dataTask];
+  //   newData.splice(taskIndex, 1);
+  //   setDataTask(newData);
+  // }
 
-  function onAddNew() {
-    const task = { ...arguments[0] };
-    const newData = [...dataTask];
-    newData.push(task);
-    setDataTask(newData);
-  }
+  // function onAddNew() {
+  //   const task = { ...arguments[0] };
+  //   const newData = [...dataTask];
+  //   newData.push(task);
+  //   setDataTask(newData);
+  // }
 
   return (
     <div>
-      <Nav />
-      {/* <NavLanding /> */}
-      <div className="row d-flex justify-content-center">
-        <div className="col-md-10">
-          <TudoList
-            data={dataTask} onDelete={(id) => onDelete(id)}
-            onAddNew={onAddNew}
-          />
+      <header>
+        <section>
+          <NavLanding />
+        </section>
+      </header>
+      <main>
+        <div className="ctn-home">
+          
+          <section><Nav /></section>
+
+          <section>
+            <TopData />
+          </section>
+
+          <section>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-md-8">
+                  <PanelTask />
+                </div>
+                <div className="col-md-4">
+                  <PanelCheckin />
+                </div>
+              </div>
+            </div>
+          </section>
+
         </div>
-      </div>
+      </main>
     </div>
   )
 }
