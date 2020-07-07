@@ -33,8 +33,8 @@ export default function Login() {
   }
 
   return (
-    <div className="form-login">
-      <form onSubmit={(e) => onSubmit(e)} className="shadow p-4 rounded bg-white">
+    <div className="ctn-form-login">
+      <form onSubmit={(e) => onSubmit(e)} className="shadow rounded bg-white form-login">
         <div className="form-group">
           <input
             className="form-control form-control-lg input-shadow"

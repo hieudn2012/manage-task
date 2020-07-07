@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TudoList from '../../components/TodosList';
 import todoApi from '../../api/todo';
 import Nav from '../../components/Nav';
+// import NavLanding from '../../components/NavLanding';
 
 function Home() {
   const [dataTask, setDataTask] = useState([]);
@@ -38,7 +39,8 @@ function Home() {
   return (
     <div>
       <Nav />
-      <div className="row d-flex justify-content-center mt-5">
+      {/* <NavLanding /> */}
+      <div className="row d-flex justify-content-center">
         <div className="col-md-10">
           <TudoList
             data={dataTask} onDelete={(id) => onDelete(id)}

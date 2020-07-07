@@ -7,6 +7,7 @@
   position: fixed;
   z-index: 999;
   width: 100%;
+  transition: background-color .3s;
 
   ul {
     display: flex;
