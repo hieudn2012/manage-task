@@ -1,0 +1,25 @@
+.ctn-landing {
+  min-width: 100vw;
+  padding: 150px 0 50px 0;
+
+  position: relative;
+
+  background-color: #047aed;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    height: 120px;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+  }
+}
+
+.form-login {
+  max-width: 400px;
+  margin: auto;
+}
