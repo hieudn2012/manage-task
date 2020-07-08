@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
-// import TudoList from '../../components/TodosList';
-import todoApi from '../../api/todo';
 import Nav from '../../components/Nav';
 import NavLanding from '../../components/NavLanding';
 import PanelTask from '../../components/PanelTask';
-import PanelCheckin from '../../components/PanelTask';
+import PanelCheckin from '../../components/PanelCheckin';
 import TopData from '../../components/TopData';
+import taskApi from '../../api/task';
 
 function Home() {
   const [dataTask, setDataTask] = useState([]);
 
   useEffect(() => {
-    const getTodoList = async () => {
+    const getTasks = async () => {
       try {
-        const response = await todoApi.getAll();
+        const response = await taskApi.getAll();
         setDataTask(response);
       } catch (error) {
         console.log('Failed to fetch todo list: ', error);
       }
     }
 
-    getTodoList();
+    getTasks();
   }, []);
 
   // function onDelete(id) {
@@ -48,7 +47,7 @@ function Home() {
       </header>
       <main>
         <div className="ctn-home">
-          
+
           <section><Nav /></section>
 
           <section>
@@ -59,7 +58,7 @@ function Home() {
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-8">
-                  <PanelTask />
+                  <PanelTask data={dataTask} />
                 </div>
                 <div className="col-md-4">
                   <PanelCheckin />
