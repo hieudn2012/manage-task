@@ -22,7 +22,7 @@ export default function PanelCheckin({ data }) {
   return (
     <div className="card bg-nav-dark mt-4 wrap-panel-high">
       <div className="card-body">
-        <h4>Latest Transaction</h4>
+        <h5 className="card-title">Latest Transaction</h5>
         <table className="table text-white">
           <thead>
             <tr>

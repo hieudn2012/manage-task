@@ -5,15 +5,20 @@ import PanelTask from '../../components/PanelTask';
 import PanelCheckin from '../../components/PanelCheckin';
 import TopData from '../../components/TopData';
 import taskApi from '../../api/task';
+import checkin from '../../api/checkin';
 
 function Home() {
   const [dataTask, setDataTask] = useState([]);
+  const [dataCheckin, setDataCheckin] = useState([]);
 
   useEffect(() => {
     const getTasks = async () => {
       try {
-        const response = await taskApi.getAll();
-        setDataTask(response);
+        const responseTask = await taskApi.getAll();
+        setDataTask(responseTask);
+
+        const responseCheckin = await checkin.getAll();
+        setDataCheckin(responseCheckin);
       } catch (error) {
         console.log('Failed to fetch todo list: ', error);
       }
@@ -57,11 +62,11 @@ function Home() {
           <section>
             <div className="container-fluid">
               <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-7">
                   <PanelTask data={dataTask} />
                 </div>
-                <div className="col-md-4">
-                  <PanelCheckin />
+                <div className="col-md-5">
+                  <PanelCheckin data={dataCheckin}/>
                 </div>
               </div>
             </div>
