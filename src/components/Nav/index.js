@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Clock from '../TimeClock';
 import Language from '../Language';
 import { img } from '../../images';
@@ -16,7 +15,7 @@ export default function Nav() {
         />
         <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul className="navbar-nav">
-            <Link to="/" className="text-white text-decoration-none">Login</Link>
+            <a href="/" className="text-white text-decoration-none">Login</a>
           </ul>
           <div className="row px-2">
             <Language />

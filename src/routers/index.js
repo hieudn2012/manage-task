@@ -12,7 +12,7 @@ export default function RouterConFig() {
       <Route exact path="/">
         <Landing />
       </Route>
-      <Route path="/home">
+      <Route path="/dashboard">
         <Home />
       </Route>
     </Switch>

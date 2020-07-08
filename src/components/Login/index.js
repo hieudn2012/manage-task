@@ -29,7 +29,7 @@ export default function Login() {
 
   function onSubmit(e) {
     e.preventDefault();
-    history.push("/home");
+    history.push("/dashboard");
   }
 
   return (

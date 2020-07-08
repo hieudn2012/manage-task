@@ -21,19 +21,16 @@ export default function NavLanding() {
       <h4>Uram.</h4>
       <ul>
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">Features</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="/">Reviews</Link>
+          <Link to="/taskmanage">Task Manage</Link>
         </li>
         <li>
-          <Link to="/">Pricing</Link>
-        </li>
-        <li>
-          <Link to="/">About</Link>
+          <Link to="/checkin">Checkin</Link>
         </li>
       </ul>
     </div>
