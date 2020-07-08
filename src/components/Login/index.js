@@ -39,7 +39,6 @@ export default function Login() {
           <input
             className="form-control form-control-lg input-shadow"
             id="task-name"
-            autoFocus
             type="email"
             value={email}
             onChange={(e) => onChangeText(e.target.value, LOGIN.EMAIL)}

@@ -27,22 +27,6 @@ function Home() {
     getTasks();
   }, []);
 
-  // function onDelete(id) {
-  //   const taskIndex = dataTask.findIndex((item) => {
-  //     return item.id === id
-  //   });
-  //   const newData = [...dataTask];
-  //   newData.splice(taskIndex, 1);
-  //   setDataTask(newData);
-  // }
-
-  // function onAddNew() {
-  //   const task = { ...arguments[0] };
-  //   const newData = [...dataTask];
-  //   newData.push(task);
-  //   setDataTask(newData);
-  // }
-
   return (
     <div>
       <header>
