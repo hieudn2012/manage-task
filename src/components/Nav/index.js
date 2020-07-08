@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Clock from '../TimeClock';
 import Language from '../Language';
 import { img } from '../../images';
@@ -7,7 +6,7 @@ import { img } from '../../images';
 export default function Nav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-nav-dark">
         <img
           src={img.logo}
           style={{ width: 20, height: 20 }}
@@ -16,7 +15,7 @@ export default function Nav() {
         />
         <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul className="navbar-nav">
-            <Link to="/">Login</Link>
+            <a href="/" className="text-white text-decoration-none">Login</a>
           </ul>
           <div className="row px-2">
             <Language />

@@ -1,52 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import TudoList from '../../components/TodosList';
-import todoApi from '../../api/todo';
-import Nav from '../../components/Nav';
+import React from 'react';
+import NavLanding from '../../components/NavLanding';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DashBoard from '../../components/DashBoard';
+import TaskManage from '../../components/TaskManage';
+import Checkin from '../../components/Checkin';
 
 function Home() {
-  const [dataTask, setDataTask] = useState([]);
-
-  useEffect(() => {
-    const getTodoList = async () => {
-      try {
-        const response = await todoApi.getAll();
-        setDataTask(response);
-      } catch (error) {
-        console.log('Failed to fetch todo list: ', error);
-      }
-    }
-
-    getTodoList();
-  }, []);
-
-  function onDelete(id) {
-    const taskIndex = dataTask.findIndex((item) => {
-      return item.id === id
-    });
-    const newData = [...dataTask];
-    newData.splice(taskIndex, 1);
-    setDataTask(newData);
-  }
-
-  function onAddNew() {
-    const task = { ...arguments[0] };
-    const newData = [...dataTask];
-    newData.push(task);
-    setDataTask(newData);
-  }
 
   return (
-    <div>
-      <Nav />
-      <div className="row d-flex justify-content-center mt-5">
-        <div className="col-md-10">
-          <TudoList
-            data={dataTask} onDelete={(id) => onDelete(id)}
-            onAddNew={onAddNew}
-          />
-        </div>
+    <Router>
+      <div>
+        <header>
+          <section>
+            <NavLanding />
+          </section>
+        </header>
+        <main>
+          <div className="ctn-home">
+            <Switch>
+              <Route exact path="/dashboard">
+                <DashBoard />
+              </Route>
+              <Route exact path="/taskmanage">
+                <TaskManage />
+              </Route>
+              <Route exact path="/checkin">
+                <Checkin />
+              </Route>
+            </Switch>
+          </div>
+        </main>
       </div>
-    </div>
+    </Router>
   )
 }
 
