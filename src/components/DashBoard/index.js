@@ -5,6 +5,7 @@ import Nav from '../../components/Nav';
 import PanelTask from '../../components/PanelTask';
 import PanelCheckin from '../../components/PanelCheckin';
 import TopData from '../../components/TopData';
+import PanelChat from '../PanelChat';
 
 export default function DashBoard() {
 
@@ -51,6 +52,11 @@ export default function DashBoard() {
             </div>
             <div className="col-md-5">
               <PanelCheckin data={dataCheckin} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <PanelChat />
             </div>
           </div>
         </div>
