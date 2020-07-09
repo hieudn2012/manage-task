@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import taskApi from '../../api/task';
 import checkin from '../../api/checkin';
-import Nav from '../../components/Nav';
-import PanelTask from '../../components/PanelTask';
-import PanelCheckin from '../../components/PanelCheckin';
-import TopData from '../../components/TopData';
-import PanelChat from '../PanelChat';
+import Nav from '../../components/nav';
+import PanelTask from '../../components/paneltask';
+import PanelCheckin from '../../components/panelcheckin';
+import TopData from '../../components/topdata';
+import PanelChat from '../panelchat';
 
 export default function DashBoard() {
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import NavLanding from '../../components/NavLanding';
+import NavLanding from '../../components/navlanding';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DashBoard from '../../components/DashBoard';
-import TaskManage from '../../components/TaskManage';
-import Checkin from '../../components/Checkin';
+import DashBoard from '../../components/dashboard';
+import TaskManage from '../../components/taskmanage';
+import Checkin from '../../components/checkin';
 
 function Home() {
 

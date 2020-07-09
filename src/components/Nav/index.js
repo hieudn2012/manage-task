@@ -1,6 +1,6 @@
 import React from 'react';
-import Clock from '../TimeClock';
-import Language from '../Language';
+import Clock from '../timeclock';
+import Language from '../language';
 import { img } from '../../images';
 
 export default function Nav() {

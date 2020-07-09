@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from '../../components/Login';
-import NavLanding from '../../components/NavLanding';
+import Login from '../../components/login';
+import NavLanding from '../../components/navlanding';
 
 export default function Landing() {
 
