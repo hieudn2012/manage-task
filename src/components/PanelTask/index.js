@@ -15,8 +15,8 @@ export default function PanelCheckin({ data }) {
 
   function renderStatus(status) {
     const statusRender = status === 4 ? 'Done' : status === 2 ? 'Inprogress' : status === 3 ? 'Pending' : 'Todo';
-    const classStatus = status === 4 ? 'bg-success' : status === 2 ? 'bg-primary' : status === 3 ? 'bg-warning' : 'bg-secondary';
-    return <div className={`${classStatus} text-center rounded`}>{statusRender}</div>
+    const classStatus = status === 4 ? 'btn-success-outline' : status === 2 ? 'btn-primary-outline' : status === 3 ? 'btn-warning-outline' : 'btn-secondary-outline';
+    return <div className={`${classStatus} text-center rounded px-2 py-1`}>{statusRender}</div>
   }
 
   return (
@@ -34,7 +34,7 @@ export default function PanelCheckin({ data }) {
           </thead>
           <tbody>
             {dataResult.map((task, index) =>
-              <tr key={index.toString()}>
+              <tr key={index.toString()} className="zoom">
                 <th scope="row">{index + 1}</th>
                 <td >{task.name}</td>
                 <td>{task.dateCreate}</td>

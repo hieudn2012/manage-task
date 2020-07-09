@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-PanelTask.propTypes = {
+PanelCheckin.propTypes = {
   data: PropTypes.array.isRequired,
 }
 
-PanelTask.defaultProps = {
+PanelCheckin.defaultProps = {
   data: [],
 }
 
-export default function PanelTask({ data }) {
+export default function PanelCheckin({ data }) {
 
   const dataResult = data.slice(0, 7);
 
@@ -29,11 +29,11 @@ export default function PanelTask({ data }) {
           </thead>
           <tbody>
             {dataResult.map((task, index) =>
-              <tr key={index.toString()}>
+              <tr key={index.toString()} className="zoom">
                 <th scope="row">{index + 1}</th>
                 <td >{moment(task.date).format('DD/MM/YYYY')}</td>
-                <td >{moment(task.checkin).format('HH:mm:ss')}</td>
-                <td >{moment(task.checkout).format('HH:mm:ss')}</td>
+                <td className="text-success">{moment(task.checkin).format('HH:mm:ss')}</td>
+                <td className="text-success">{moment(task.checkout).format('HH:mm:ss')}</td>
               </tr>
             )}
           </tbody>
