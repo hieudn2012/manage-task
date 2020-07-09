@@ -3,8 +3,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Home from '../pages/home';
-import Landing from '../pages/landing';
+import Home from '../pages/home/index';
+import Landing from '../pages/landing/index';
 
 export default function RouterConFig() {
   return (
