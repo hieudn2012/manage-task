@@ -4,3 +4,8 @@
     transform: scale(1.02);
   }
 }
+
+.collapse-test {
+  transition: height .3s;
+  overflow: auto;
+}

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Panel from '../common/panel';
 
 export default function PanelChat() {
 
+  const [show, setShow] = useState(true);
+
   return (
-    <div className="card bg-nav-dark mt-4 wrap-panel-high">
-      <div className="card-body">
+    <Panel className="mt-4 border border-secondary" collapse show={show} onCollapse={() => setShow(!show)} textHeader="Chat">
+      <div>
         <h5 className="card-title">Chat Room</h5>
       </div>
-    </div>
+    </Panel>
   )
 }
