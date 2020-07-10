@@ -18,7 +18,7 @@ export default function PanelCheckin({ data }) {
   const dataResult = data.slice(0, 7);
 
   return (
-    <Panel className="mt-4 border border-secondary" collapse show={show} onCollapse={() => setShow(!show)} textHeader="Checkin">
+    <Panel className="mt-4 border border-secondary box-effect" collapse show={show} onCollapse={() => setShow(!show)} textHeader="Checkin">
       <h5 className="card-title">Checkin</h5>
       <table className="table text-white">
         <thead>

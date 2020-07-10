@@ -23,7 +23,7 @@ export default function PanelCheckin({ data }) {
   }
 
   return (
-    <Panel className="mt-4 border border-secondary" collapse show={show} onCollapse={() => setShow(!show)} textHeader="Task">
+    <Panel className="mt-4 border border-secondary box-effect" collapse show={show} onCollapse={() => setShow(!show)} textHeader="Task">
       <h5 className="card-title">Latest Transaction</h5>
       <table className="table text-white">
         <thead>

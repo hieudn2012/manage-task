@@ -5,6 +5,11 @@
   }
 }
 
+.box-effect:hover {
+  transition: .2s;
+  box-shadow: 0px 2px 24px 3px rgba(68,52,135,1);
+}
+
 .collapse-test {
   transition: height .3s;
   overflow: auto;
