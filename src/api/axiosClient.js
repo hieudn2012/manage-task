@@ -1,5 +1,6 @@
 import axios from 'axios';
 import queryString from 'query-string';
+import Cache from '../cache/cacheUtil'
 
 const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -11,7 +12,7 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(async (config) => {
   // Handle token here ...
-  // console.log('config', config)
+  config.headers.Authorization = Cache.getToken();
   return config;
 });
 

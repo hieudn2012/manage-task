@@ -17,7 +17,7 @@ export default function DashBoard() {
     const getTasks = async () => {
       try {
         const responseTask = await taskApi.getAll();
-        setDataTask(responseTask);
+        setDataTask(responseTask.data);
       } catch (error) {
         console.log('Failed to fetch task list: ', error);
       }
@@ -26,7 +26,7 @@ export default function DashBoard() {
     const getCheckin = async () => {
       try {
         const responseCheckin = await checkin.getAll();
-        setDataCheckin(responseCheckin);
+        setDataCheckin(responseCheckin.data);
       } catch (error) {
         console.log('Failed to fetch checkin list: ', error);
       }
