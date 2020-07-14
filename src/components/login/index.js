@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { LOGIN } from '../../const';
 import { checkEmail, checkPassword } from '../../validation/validateUtil';
+import userApi from '../../api/user';
+import Notification from '../common/notification';
+import cacheUtil from '../../cache/cacheUtil';
 
 export default function Login() {
 
@@ -11,6 +14,8 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [msgEmail, setMsgEmail] = useState('');
   const [msgPassword, setMsgPassword] = useState('');
+  const [showNotify, setShowNotify] = useState(false);
+  const [msgNotify, setMsgNotify] = useState('');
 
   function onChangeText(value, type) {
     switch (type) {
@@ -27,13 +32,35 @@ export default function Login() {
     }
   }
 
+  function showNotifycation() {
+    setShowNotify(true);
+    setTimeout(() => {
+      setShowNotify(false);
+    }, 3000);
+  }
+
   function onSubmit(e) {
     e.preventDefault();
-    history.push("/dashboard");
+    if (msgEmail && msgPassword) return;
+    userApi.login(JSON.stringify({ email, password }))
+      .then(result => {
+        if (result.code === 200) {
+          cacheUtil.saveToken(result.data.token);
+          history.push("/dashboard")
+        } else {
+          setMsgNotify(result.message);
+          showNotifycation();
+        }
+      })
+      .catch(err => console.log(err));
   }
 
   return (
     <div className="ctn-form-login">
+      {showNotify &&
+        <Notification show={showNotify}>
+          {msgNotify}
+        </Notification>}
       <form onSubmit={(e) => onSubmit(e)} className="shadow rounded bg-white form-login">
         <div className="form-group">
           <input

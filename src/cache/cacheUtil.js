@@ -18,7 +18,7 @@ function getToken() {
 }
 
 function saveToken(token) {
-  localStorage.setItem(TOKEN, JSON.stringify(token));
+  localStorage.setItem(TOKEN, token);
 }
 
 function removeToken() {
