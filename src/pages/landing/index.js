@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Login from '../../components/login';
 import NavLanding from '../../components/navlanding';
+import Register from '../../components/register';
+import ForgotPassword from '../../components/forgotpassword';
 
 export default function Landing() {
+
+  const [switchForm, setSwitchForm] = useState(1);
+
+  function _renderForm() {
+    switch (switchForm) {
+      case 1: return <Login
+        onSwitchRegister={() => setSwitchForm(2)}
+        onSwitchForgotPassword={() => setSwitchForm(3)} />
+      case 2: return <Register
+        onBack={() => setSwitchForm(1)} />
+      case 3: return <ForgotPassword
+        onBack={() => setSwitchForm(1)} />
+      default:
+        break;
+    }
+  }
+
 
   return (
     <div>
       <header>
         <section>
-          <NavLanding /> 
+          <NavLanding />
         </section>
       </header>
       <main>
@@ -24,7 +43,7 @@ export default function Landing() {
                 </div>
               </div>
               <div className="col-md-6">
-                <Login />
+                {_renderForm()}
               </div>
             </div>
           </div>

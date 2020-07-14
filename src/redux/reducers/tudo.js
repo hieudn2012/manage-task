@@ -1,7 +1,7 @@
 import { ACTION } from "../actions/todo";
 
 const initialState = {
-  task: {}
+  task: { name: "test" }
 }
 const taskReducer = (state = initialState, action) => {
   switch (action.type) {
